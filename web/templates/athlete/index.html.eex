@@ -1,0 +1,28 @@
+<h2>Listing athletes</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for athlete <- @athletes do %>
+    <tr>
+      <td><%= athlete.name %></td>
+      <td><%= athlete.position %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: athlete_path(@conn, :show, athlete), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: athlete_path(@conn, :edit, athlete), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: athlete_path(@conn, :delete, athlete), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New athlete", to: athlete_path(@conn, :new) %>

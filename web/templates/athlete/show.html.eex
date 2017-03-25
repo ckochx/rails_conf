@@ -1,0 +1,18 @@
+<h2>Show athlete</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @athlete.name %>
+  </li>
+
+  <li>
+    <strong>Position:</strong>
+    <%= @athlete.position %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: athlete_path(@conn, :edit, @athlete) %>
+<%= link "Back", to: athlete_path(@conn, :index) %>
