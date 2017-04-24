@@ -3,6 +3,7 @@ defmodule RailsConf.Athlete do
 
   schema "athletes" do
     field :name, :string
+    field :email, :string, required: true
     field :position, :string
 
     timestamps()
@@ -13,7 +14,7 @@ defmodule RailsConf.Athlete do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :position])
-    |> validate_required([:name, :position])
+    |> cast(params, [:name, :position, :email])
+    |> validate_required([:name, :position, :email])
   end
 end

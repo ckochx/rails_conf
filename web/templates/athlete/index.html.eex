@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Position</th>
+      <th>Email</th>
 
       <th></th>
     </tr>
@@ -16,6 +17,7 @@
     <tr>
       <td><%= athlete.name %></td>
       <td><%= athlete.position %></td>
+      <td><%= athlete.email %></td>
 
       <td class="text-right">
         <%= link "Show", to: athlete_path(@conn, :show, athlete), class: "btn btn-default btn-xs" %>
