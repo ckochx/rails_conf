@@ -1,0 +1,184 @@
+0) Refactor some piece of ruby code along functional lines to improve the readability and function?
+
+
+1) About Phoenix:
+Population: 1.5 million
+Average Elevation: more than 3700 ft above sea level
+Population Density: Only 10 people per sq mi.
+
+2) About Phoeinx:
+Developed by Chris McCord and Dockyard, etc.
+
+  Citation Needed
+
+Both Elixir (Jose Valim) and Phoenix came from developers and development groups who were deeply invested in Ruby and Rails.
+
+There are many syntactic and structural decisions that make Phoenix very familiar to rails developers.
+
+
+Structually, a Phoenix app doesn't look too different from a Rails app.
+
+
+3) Functional FTW:
+Immutable
+Stateless
+
+Keeping these 2 goals in mind when you developing if you do nothing else will make you a better dev.
+
+
+4) Piping values:
+The wonderful pipe operator |>
+
+Meaning
+Decompose data transformations into small and manageable steps that you can easily reason about and test at each step.
+
+(To me this is very similar to the S part of SOLID.)
+
+Again, if you internalize this approach to ruby/rails/OO development, (+10 exp)
+
+
+5) Rails and Phoenix similarities:
+
+Both designed for Speed and Ease of development
+Both based on languages that embrace/encourage developer happiness.
+Both care about the appearance of code.
+
+Rails is a SUPERset of ruby. Hence the are Ruby and Rails programmers and that implies different things.
+Phoenix programming is Elixir programming.
+
+
+6) REPL similarities:
+irb:ruby::rails console:rails
+iex:elixir::iex -S mix phoenix.server --trace:phoenix
+
+
+7) Routing
+
+
+8) Plug:Phoniex::Middlewares:Rails
+
+
+7) Elixir's Missing Pieces:
+
+As the language is still young, there are some frameworks, packages, and miscellanous conveniences that are/may be missing. Fortunately Erlang has many of the missing pieces and Erlang is fully interoperable with Elixir so any Erlang package can be used with Elixir. In fact, a fair number of Elixir packages are just wrappers to Erlang packages.
+
+
+8) It's all data:
+Decompising objects into data makes EVERYTHING easier to reason about.
+
+I don't need to know if
+MySpecialObject < MySpecialParent
+  instance_of_my_special_object.respond_to?(:some_esoteric_method)
+
+All your data manipulation happens by transforming MapA (Hash) into MapB
+or some other basic / core data structure.
+
+Moreover all the manipulation uses methods on the core data structure module.
+
+Though this may not sound like much it reduces the cognitive overhead of understanding/remebering** what methods your class implements.
+It also increases the readbility of your code and makes it easier for others to come behind and also understand your code.
+
+** I forget what my code does almost as soon as I merge my pull requests.
+
+
+9) Keep the database stupid***:
+
+SQL is Turing complete.
+
+Keep your interface with the database stupid.
+
+Limit models to db readers, writers, and data validators.
+
+***This is manifestly not true.
+
+
+9-A)
+Because Ecto returns database data as data, rather then a kind of database-y object, you know when your query is getting executed.
+
+AR, by comparison, defers running the actual query as long as possible, which in practice, queries can get run from the view.
+
+It's not that one approach is better, but it does mean in Elixir/Phoenix, you can be certain when and in what context your query code will get run. It also means you can't return that query as something that you can chain to later. From a framework perspective, this is a reasonable and desirable goal, but from a practical point-of-view, excepting scopes, I don't typically write code that returns a query-object with the intention or implementation of performing further queries on it later. (Typically I defer making my call to the db as late as possible.)
+
+
+10) (Even More) Convention over Configuration:
+
+There's really no difference between Rails and Phoenix on this one.
+
+Don't worry about whether the file structure of your project is perfect, embrace the decisions that have been made by the framework and focus on WHAT your code does not WHERE it lives.
+
+The main caveat here is to understand the implication of different folder locations W/R/T to code live reloading. But, this is really only relevant for active development and should not matter once your code is deployed.
+
+
+11) Distributed Systems:
+
+There's a slight difference between Rails and Phoenix here.
+
+In elixir a simple heartbeat check may not be enough.
+
+If the app compiles and runs, then it will probably be able to respond to a trivial check like:
+`https://wwww.my_api.org/ruok?`
+even if code that calls into other parts of the application actuallly fail.
+
+You may find you need to to reach into some other parts of the system to assert that they are available.
+
+Example, our heartbeat had to perform a trival db query.
+
+Consider this a best-practice approach to availability as apps become more internally stable, the interface between your app and its external dependency becomes more important that this is the thing you are monitoring.
+
+
+12) Asynchronous behavior:
+
+This is a really unfair comparison:
+
+Elixir has asynchronicity baked in from the beginning. There are several packages available at both the Erlang and Elixir level to manage asynchronous behavior as well as language methods that allow you to spin off a (lightweight) process to perform asynchronous tasks and manage it yourself.
+
+On the ruby side, things are always improving. While there is a threading/process spawning procedure in ruby, and Rails offers ActiveJob, no one I work with actually uses the ruby threads or processes directly. ActiveJob is good, but it essentially mandates the inclusion of additional dependencies, sidekiq or resque being the most common queue clients, as well as a queue service, usually redis, although rabbitmq appears to also be a possibility.
+
+Side note: You definitely need to use additional search terms when googling for "Phoenix Poolboy"
+
+
+13) Explicit vs Implicit programming
+
+Young me vs current me.
+Tearing my hair out over implicit methods in programming.
+Then understanding some of where and when they are happening.
+And finally understanding then reasonably well, but still not trusting it.
+
+
+14) Testing
+
+
+Elixir testing has several differences from ruby specs.
+
+There's not much of a concept of stubbing in elixir. For several reasons:  Because it's all data and there are no complicated objects to create that rely on previously created objects. Because it's really fast and stubbing / mocking / doubling wouldn't do much to speed up the tests, and because the tests *can* run asynchronously, it wouldn't make a lot of sense to deal with a ton of stubbing / mocking setup for every test.
+
+But mostly I think the reason elixr doesn't embrace stubbing is because it doesn't need to. Per Jose:
+"Furthermore, because mocks like the one above changes modules globally, they are particularly aggravating in Elixir as changing global values means you can no longer run that part of your test suite concurrently."
+http://blog.plataformatec.com.br/2015/10/mocks-and-explicit-contracts/
+
+While it is important to test and assert the interface between elements is maintained and the contract is respected, doing so it only a means to the end which is confidence that when I start with input A and the end I will have output G, and I may or may not ever care about the intermediate steps. If my language supports this without elaborate contortions, then why worry about mocking / stubbing / doubling.
+
+As for Rails, the cost of setting up the many layers needed to test something, from database, to queue, to webserver, can be non-trivial and the time it can take to run a large test suite becomes significant.
+
+In this case mocking and doubling become viable strategies to help ensure your unit tests are testing units and not testing the entire application stack.
+
+
+15) Isolated by default, Segregated by Default
+
+I'm a big fan of automated systems. I prefer when an automated system can do my remembering for me. As such, there's a lot to like about language tools that enforce segregation, and data isolation rather than relying on patterns of implementation that I need to remember to implement.
+
+While ruby really adopts the opposite extreme of isolation and segregation, private methods are really only suggested to be private, there are patterns that one can adopt and enforce through static code analysis and code reviews that can keep your implementations cleaner and easier to reason about. The S and I parts of SOLID really help in this regard. The segreation is lacking, but by keeping things Single-Responsibility and Interface-Segregated keeps your code easier to understand and, easier to reason about, and easier to share.
+
+
+
+16) Pattern Matching / Function Arity
+
+In Elixir, the argument signature of a function is used to find the correct function to invoke. This provides a powerful tool to make functions more reusable, it is also used in recursion.
+
+Though type pattern matching cannot be used in ruby in functions, keyword parameters are a great intermediate step that makes it easier, and more explicit to understand what a function is expecting to receive as arguments. It also makes function overloading a less crazy-making concept.
+
+
+17)
+
+
+

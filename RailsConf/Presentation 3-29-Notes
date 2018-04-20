@@ -1,0 +1,44 @@
+Presentation 3-29
+More Notes:
+
+Phoenix is server side MVC
+Lead with the about.
+
+Explain some of the frustrations with developing Rails
+And How Phoenix can help solve these problems.
+An alternative way of solving the same problem.
+
+More suited to a multi-core asynchronous world.
+
+
+Underscore _assigns
+
+Get more into Pattern Matching
+Recursion
+
+
+Slide 29
+Update Module names to Match Athlete model
+
+explain --no-brunch
+
+Slide 55 "Help ORM help you"
+Got stuck here.
+
+EEx code:
+Change pink don't use pink
+Lose the bold, background colors and increase font size.
+
+Change Syntax Highlighting so Phoenix and Elixir look different.
+
+
+How to start Phoenix in an existing company
+Pitfalls with a new Application
+Real examples
+
+Why choose Phoenix over Node, Scala, or Cloture.
+
+
+Phoenix ≠ Rails
+Explain Redis Sidekiq more and what is present in an application that doesn't require additional infrastructure
+

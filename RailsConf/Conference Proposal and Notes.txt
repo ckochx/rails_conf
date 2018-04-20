@@ -1,0 +1,144 @@
+Conference Proposal:
+
+Developer Happiness-- From Rails to Phoenix: How functional programming can help us get better at object oriented design (and be happier doing it).
+
+  (More data, fewer objects)
+
+  I'm not a well-known programmer, so I don't carry the necessary sway to claim that object-oriented design is dead, but for me,
+
+  Object oriented (OO) design is a hopelessly confounding approach to programming. OO sounds like a reasonable approach, model your code like real world objects, but many problems are better solved by abandoning the concrete world in favor of abstractions.
+
+  Perhaps one of the more common examples of this is recursion, a concept that has little practical application in the real world, but which underpins many programming concepts.
+
+  What does this mean for developer happiness? It means freeing yourself from reality and embracing abstraction. It means manipulating data rather than creating objects that have methods.
+
+  A functional approach can help enforce a mindset of data flowing to and from your web app, rather than your application being an object that responds to web requests with more objects. (This is of course how OO is envisioned, as message passing between objects.) Unfortuanately self-imposed disciple is a big ask for most of us, and I, for one am much more disciplined when the language is there to help force me to do so.
+
+  Much like the sewing machine could not come to be until (... Singer?) stopped trying to replicate the actions of seamstresses and instead (re)engineered the problem from input to desired output could the sewing machine come to be.
+
+
+
+  The pipe operator: `|>`
+  This little guy has become my new favorite operator. It's a simple enough concept, but one that I have found really forces you into the functional mindset. It means take the result of the operation above and pass it to the next function as the first argument.
+
+  It is a concept that I find to have a lot of parallels with a web request. Namely: a request is received with some data. My app will take this data, passing through several (functions, layers of objects) and transform it at each step until I can return some kind of response to the requester. Again, this shares much similarity with the idealized OO paradigm, but being enforced at the language level reduces some of the cognitive load of development and 1: makes programming simpler, 2: makes your code easier to reason about, 3: (something).
+
+
+  Negative Examples:
+    "Conway's Law"
+
+  Positive Examples:
+    Sewing Machine
+
+
+  As Rails developers, how can we borrow some FP techniques to level up what we're doing in the Rails world?
+  How can we structure the boundary between Rails and Elixir to ensure both apps work well and play to their respective strengths?
+  What lessons are there to learn from taking an elixir app into production?
+  How the elixir/ecto/phoenix design decisions/patterns help us make our rails apps better/cleaner/easier to maintain/more performant?
+  Why it's important to push your own and your companies comfort zones.
+
+  Finally, cultivating personal interests that don't (all) involve programming.
+
+
+
+Open Source Deep Dive
+Authenticating and securing web requests with JSON web tokens.
+
+Abstract:
+
+
+
+Details:
+
+Pitch:
+
+
+
+
+
+
+
+
+
+
+
+
+Leading at all Levels-- Is being a subject matter expert enough? Hint, it's not.
+
+  Abstract:
+    As a senior developer at NCSA, Christian works on Rails, Elixir/Phoenix, and Java projects. He also mentors junior developers and pushes the entire dev team to adhere to standards and follow best-practices as much as possible.
+
+  What does it take to level-up to the in-house subject matter expert and does this grow into leadership cachet?
+    RTFM-- Seriously. Reading documentation, instead of Stack-Overflow, puts you ahead of 75%? of your competition.
+    Answer open questions.
+    Look for mentorship opportunities, from meetups, to in-house education, try to be the one who offers to help everyone else improve.
+
+  Pull Requests as opportunity. Advocate for design patterns and using canonical approaches to solving engineering problems.
+  Learn algorithms- Most general CS problems were solved (efficiently) in the 50s and 60s. Don't reinvent the wheel, practice recognizing these patterns and finding the solutions that already exist.
+
+
+
+LambdaConf Proposals:
+  Use Cases:
+    Taking Elixir into production.
+    Coordinating a cluster
+    Hiring the Poolboy
+
+
+
+I'm not a well-known programmer, so I don't carry the sway to claim that object-oriented design is dead, but for me, object oriented (OO) is an often misleading approach to programming. OO sounds like a good approach, model your code like real world objects, but many problems are better solved by abandoning the concrete world in favor of abstractions. What does this mean for developer happiness? It means freeing yourself from reality and embracing abstraction. It means manipulating data rather than proliferating more and more complex objects.
+
+
+
+
+He also mentors junior developers and pushes the entire dev team to adhere to standards and follow best-practices as much as possible.
+
+The development of the sewing machine offers an interesting parallel. Early attempts to develop sewing machines which replicated human sewing failed to develop into a mature technology, in fact they barely worked as machines at all. It wasn't until sewing machine inventors stopped trying to replicate the actions of seamstresses and instead (re)engineered the problem from input to desired output that they could bring the sewing machine being and begin iterating the design towards the sewing machines we know today. In many ways, this is similar to OOP. It can provide us a useful middle state between the problem we are trying to solve and the abstracted solution, but it should not be the destination.
+
+
+
+Object oriented (OO) design is an often misleading approach to programming. OO sounds like a good approach, model your code like real world objects, but many problems are better solved by abandoning the concrete world in favor of abstractions.
+
+The development of the sewing machine offers an interesting parallel. Early attempts to develop sewing machines which replicated human sewing failed to develop into a mature technology, in fact they barely worked as machines at all. It wasn't until sewing machine inventors stopped trying to replicate the actions of seamstresses and instead (re)engineered the problem from input to desired output that they could bring the sewing machine being and begin iterating the design towards the sewing machines we know today. In many ways, this is similar to OOP. It can provide us a useful middle state between the problem we are trying to solve and the abstracted solution, but it should not be the destination.
+
+Object oriented (OO) design is an often misleading approach to programming. OO sounds like a good approach, model your code like real world objects, but many problems are better solved by abandoning the concrete world in favor of abstractions.
+
+A functional approach can help enforce a mindset of data flowing to and from your web app, rather than your application being an object that responds to web requests with more objects. (This is of course how OO is envisioned, as message passing between objects.) Unfortuanately self-imposed disciple is a big ask for most of us, and I for one, am much more disciplined when the language is there to help force me to do so.
+
+Elixir and Phoenix were both developed by Ruby and Rails programmers who tried to take all the great features or the language / framework and combine it with a compiled, funtional language making immutability, thread-safety, concurrency, and lightening fast execution first class citizens. This makes E/P perfect for the web, but embracing the FP approach can also help make you a happier and better rails developer.
+
+
+What does this mean for developer happiness? It means freeing yourself from reality and embracing abstraction. It means manipulating data rather than creating objects that have methods.
+Perhaps one of the more common examples of this is recursion, a concept that has little practical application in the real world, but which underpins many programming concepts.
+
+
+  General Talk Outline:
+  As Rails developers, how can we borrow some FP techniques to level up what we're doing in the Rails world?
+  Why it's important to push your own and your companies comfort zones.
+
+  Finally, cultivating personal interests that don't (all) involve programming.
+
+
+Abstract:
+Elixir has rapidly developed into a mature language with an ever-growing library of packages that excels at running web apps. And because both Elixir and Phoenix were developed by Ruby / Rails programmers, the ease with which you can learn Elixir as a Ruby developer, is much greater than many of the other  languages. With numerous code examples, this talk will discuss how learning a functional approach to handling web requests can improve what we do every day with Rails. This talk is aimed at people who have some familiarity with Rails but no experience with Elixir is necessary.
+
+
+Bio:
+As a senior developer at NCSA, a primarily Rails shop in Chicago, Christian works on the many new and legacy Rails apps, and has brought a smattering of Elixir/Phoenix into the shop. Professionally his interests include operational security including implementation of cryptographic libraries, Ruby, Rails, Elixir, Phoenix, Docker, and Elastic Search. Christian tries to gain experience in every frame of the dev stack, from servers and dev-ops all the way through to the javascript on the front end.
+
+
+Details:
+Elixir and Phoenix were both developed by Ruby and Rails programmers who tried to take all the great features or the language / framework and combine it with a compiled, functional language making immutability, thread-safety, concurrency, and lightening fast execution first class citizens. This makes Elixir and Phoenix great for the web, but embracing the FP approach can also help make you a happier and better Rails developer. Learning new languages is fun and one of the best things I can do as a programmer to increase my own happiness and I hope to spread some of this enjoyment to the other conference attendees.
+
+Beginning with a high-level overview of the similarities between Rails/Phoenix as well as the ancillary support packages: Bundler/Mix, and RubyGems/Hex my initial aim will be to emphasize the ease with which a Rails developer can jump into Elixir/Phoenix development.
+
+Elixir's functional approach can help enforce a mindset of data flowing to, through, and from your web app and this can make your application easier to design, more stable, and easier to reason about. With examples from production Elixir apps, I will show how we can adopt some design patterns that are actively encouraged/enforced in Elixir and make them work for our Rails apps.
+
+The aim of this talk will be to familiarize the audience with functional programming techniques that can be applied to Rails development and to show how this approach can make our Rails apps not only better and more stable, but also more coherent and easier for other developers to work on.
+
+
+Pitch:
+Elixir is a great language on it's own, but it's even better (and easier to learn) when coming from the world of Ruby on Rails. In the course of proposing the use of and the implementation of several Elixir/Phoenix apps, I have developed a strong affinity for the language. I have also grown an appreciation for the decision to base it off a language as mature and stable as Erlang, but also one that is so well suited to the modern world of web apps.
+
+I hope to share some of this enthusiam with the audience, but to frame this in terms of the pieces that I have found most applicable to my own work on Rails apps.
+

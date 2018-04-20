@@ -1,0 +1,40 @@
+Presentation Notes:
+
+Bad transition from rack to web call as funciotn and again from function to pipe operator.
+
+Benefits of elixir over rails
+
+Each point needs a comparison and benefit of elixir over rails
+
+
+Pipe operator example. Very confusing.
+Break example into more slides.
+
+Pipe in terminal
+
+Show the equivalency of 2 functions without the pipe.
+
+Lead with the ruby example first for piping
+
+
+Reference ruby terms, ie hash and array, not map and list.
+
+Pattern matching. Enables recursion. (More explanation)
+
+
+Be clearer about the goal of each slide.
+
+
+Awkward transition from piping to routing
+
+Explain destructuring -- pattern matching
+
+Controller Slide
+Phoenix controller, not Elixir
+Missing end
+Rename index.html to show.html to match function name
+
+
+ORM the the typo
+
+
