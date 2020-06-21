@@ -22,7 +22,11 @@ defmodule RailsConf.AthleteController do
         |> put_flash(:info, "Athlete created successfully.")
         |> redirect(to: athlete_path(conn, :index))
       {:error, changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        conn
+        |> put_status(:unprocessable_entity) #422
+        |> put_flash(:warn, "Errors when creating this athlete.")
+        |> put_flash(:error, "Please review the errors below.")
+        |> render("new.html", changeset: changeset)
     end
   end
 

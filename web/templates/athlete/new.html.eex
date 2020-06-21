@@ -1,6 +1,6 @@
 <h2>New athlete</h2>
 
-<%= render "form.html", changeset: @changeset,
+<%= render "form.html", changeset: @changeset, conn: @conn ,
                         action: athlete_path(@conn, :create) %>
 
 <%= link "Back", to: athlete_path(@conn, :index) %>

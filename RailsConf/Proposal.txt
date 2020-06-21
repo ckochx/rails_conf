@@ -1,0 +1,31 @@
+Rails Conf:
+
+Rails to Phoenix: How Elixir can level-you-up in Rails
+Status: ACCEPTED  Updated: about 5 hours ago
+Speaker
+Christian Koch
+Tags
+BEGINNER INTERMEDIATE
+Format
+Regular Session
+Track
+General
+
+Abstract
+Elixir has rapidly developed into a mature language with an ever-growing library of packages that excels at running web apps. And because both Elixir and Phoenix were developed by Ruby / Rails programmers, the ease with which you can learn Elixir as a Ruby developer, is much greater than many other languages. With numerous code examples, this talk will discuss how learning a functional approach to handling web requests can improve what we do every day with Rails. This talk is aimed at people who have some familiarity with Rails but no experience with Elixir is necessary.
+
+For Review Committee
+
+Details
+Elixir and Phoenix were both developed by Ruby and Rails programmers who tried to take many of the great features of the language / framework and into a compiled, functional language making immutability, thread-safety, concurrency, and lightening fast execution first class citizens. This makes Elixir and Phoenix great for the web, but embracing the functional approach can also help make you a happier and better Rails developer. Learning new languages is fun and one of the best things I can do as a programmer to increase my own happiness and I hope to spread some of this enjoyment to the other conference attendees.
+
+Beginning with a high-level overview of the similarities between Rails/Phoenix as well as the ancillary packages: Bundler/Mix, and RubyGems/Hex my initial aim will be to emphasize the familiarity between Ruby and Elixir and the ease with which a Rails developer can jump into Elixir/Phoenix development.
+
+Elixir's functional approach can help enforce a mindset of data flowing to, through, and from your web app and this can make your application easier to design, more stable, and easier to reason about. With examples from production Elixir apps, I will show how we can adopt some design patterns that are actively encouraged/enforced in Elixir and make them work for our Rails apps.
+
+The aim of this talk will be to familiarize the audience with functional programming techniques that can be applied to Rails development and to show how this approach can make our Rails apps not only better and more stable, but also more coherent and easier for other developers to work on.
+
+Pitch
+Elixir is a great language on it's own, but it's even better (and easier to learn) when coming from the world of Ruby on Rails. In the course of learning and using this language on several Elixir/Phoenix apps, I have developed a strong affinity for the language. I have also grown an appreciation for the decision to base an a language as mature and stable as Erlang, and a language that is so well suited to the modern world of possibly asynchronous, definitely distributed web apps.
+
+I aim to share spread of this enthusiasm to the audience, but to frame this in terms of the pieces that I have found most applicable to my own work on Rails apps.

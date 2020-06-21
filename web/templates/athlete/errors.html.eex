@@ -1,0 +1,24 @@
+<h2>Listing Errors</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Detail</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for error <- @errors do %>
+      <tr>
+        <td><%= error.field %></td>
+        <td><%= error.type %></td>
+        <td><%= error.detail %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link "Try again (New Athlete)", to: athlete_path(@conn, :new) %>
